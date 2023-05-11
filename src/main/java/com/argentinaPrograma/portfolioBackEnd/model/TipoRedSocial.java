@@ -14,14 +14,14 @@ public class TipoRedSocial {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String nombre;
+    private String redSocial;
 
     public TipoRedSocial() {
     }
 
     public TipoRedSocial(Long id, String nombre) {
         this.id = id;
-        this.nombre = nombre;
+        this.redSocial = nombre;
     }
     
     
