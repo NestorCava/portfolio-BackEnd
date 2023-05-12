@@ -18,19 +18,24 @@ public class Educacion {
     
     private String titulo;
     private String institucion;
-    private Date fecha_inicio;
-    private Date fecha_fin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String mensiones;
 
     public Educacion() {
     }
 
-    public Educacion(Long id, String titulo, String institucion, Date fecha_inicio, Date fecha_fin, String mensiones) {
+    public Educacion(Long id, 
+                     String titulo, 
+                     String institucion, 
+                     Date fechaInicio, 
+                     Date fechaFin, 
+                     String mensiones) {
         this.id = id;
         this.titulo = titulo;
         this.institucion = institucion;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.mensiones = mensiones;
     }
     

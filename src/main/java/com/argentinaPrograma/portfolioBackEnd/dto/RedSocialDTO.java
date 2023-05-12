@@ -15,7 +15,10 @@ public class RedSocialDTO implements Serializable{
     public RedSocialDTO() {
     }
 
-    public RedSocialDTO(Long id, String usuario, String url, String redSocial) {
+    public RedSocialDTO(Long id, 
+                        String usuario, 
+                        String url, 
+                        String redSocial) {
         this.id = id;
         this.usuario = usuario;
         this.url = url;

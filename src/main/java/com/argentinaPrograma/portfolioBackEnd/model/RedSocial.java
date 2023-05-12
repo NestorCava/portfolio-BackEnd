@@ -17,14 +17,16 @@ public class RedSocial {
     
     private String usuario;
     private String url;
+    private Long idTipoRedSocial;
 
     public RedSocial() {
     }
 
-    public RedSocial(Long id, String usuario, String url) {
+    public RedSocial(Long id, String usuario, String url, Long idTipoRedSocial) {
         this.id = id;
         this.usuario = usuario;
         this.url = url;
+        this.idTipoRedSocial = idTipoRedSocial;
     }
     
 }

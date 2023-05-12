@@ -9,6 +9,18 @@ public class UsuarioDTO {
     private Long id;
     private String usuario;
     private String password;
-    private Long id_persona;
-    
+    private Long idPersona;
+
+    public UsuarioDTO() {
+    }
+
+    public UsuarioDTO(Long id, 
+                      String usuario, 
+                      String password, 
+                      Long idPersona) {
+        this.id = id;
+        this.usuario = usuario;
+        this.password = password;
+        this.idPersona = idPersona;
+    }
 }

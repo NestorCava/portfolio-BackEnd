@@ -17,13 +17,15 @@ public class Usuario {
     
     private String usuario;
     private String password;
+    private Long idPersona;//foreign key de persona
 
     public Usuario() {
     }
 
-    public Usuario(Long id, String usuario, String password) {
+    public Usuario(Long id, String usuario, String password, Long idPersona) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
+        this.idPersona = idPersona;
     }
 }

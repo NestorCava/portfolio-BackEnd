@@ -18,19 +18,24 @@ public class Experiencia {
     
     private String empresa;
     private String cargo;
-    private Date fecha_inicio;
-    private Date fecha_fin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String descripcion;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long id, String empresa, String cargo, Date fecha_inicio, Date fecha_fin, String descripcion) {
+    public Experiencia(Long id, 
+                       String empresa, 
+                       String cargo, 
+                       Date fechaInicio, 
+                       Date fechaFin, 
+                       String descripcion) {
         this.id = id;
         this.empresa = empresa;
         this.cargo = cargo;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.descripcion = descripcion;
     }
 }

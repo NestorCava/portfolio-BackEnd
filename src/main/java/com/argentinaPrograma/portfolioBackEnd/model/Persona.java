@@ -22,6 +22,10 @@ public class Persona {
     private String posicion;
     private String localidad;
     private String acerca;
+    private Long[] idExperiencia; //foreign key de Experiencia
+    private Long[] idEducacion; //foreign key de Educacion
+    private Long[] idSkill; //foreign key de Skill
+    private Long[] idProyecto; //foreign key de Proyecto
 
     public Persona() {
     }
@@ -33,7 +37,11 @@ public class Persona {
                    String foto, 
                    String posicion, 
                    String localidad, 
-                   String acerca) {
+                   String acerca,
+                   Long[] idExperiencia,
+                   Long[] idEducacion,
+                   Long[] idSkill,
+                   Long[] idProyecto){
         
         this.id = id;
         this.nombre = nombre;
@@ -43,6 +51,10 @@ public class Persona {
         this.posicion = posicion;
         this.localidad = localidad;
         this.acerca = acerca;
+        this.idExperiencia = idExperiencia;
+        this.idEducacion = idEducacion;
+        this.idSkill = idSkill;
+        this.idProyecto = idProyecto;
     }
     
     
