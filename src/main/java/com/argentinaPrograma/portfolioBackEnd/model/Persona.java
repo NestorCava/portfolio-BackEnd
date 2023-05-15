@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,10 +24,28 @@ public class Persona {
     private String posicion;
     private String localidad;
     private String acerca;
-    private Long[] idExperiencia; //foreign key de Experiencia
-    private Long[] idEducacion; //foreign key de Educacion
-    private Long[] idSkill; //foreign key de Skill
-    private Long[] idProyecto; //foreign key de Proyecto
+    
+    //private List<Long> idRedSocial;//foreign key de las Redes Sociales
+    @OneToMany(mappedBy="persona")
+    private List<RedSocial> redesSociales;
+    
+    //private List<Long> idExperiencia; //foreign key de Experiencia
+    @OneToMany(mappedBy="persona")
+    private List<Experiencia> experiencia;
+    
+    //private List<Long> idEducacion; //foreign key de Educacion
+    @OneToMany(mappedBy="persona")
+    private List<Educacion> educacion;
+    
+    //private List<Long> idSkill; //foreign key de Skill
+    @OneToMany(mappedBy="persona")
+    private List<Skill> skill;
+    
+    //private List<Long> idProyecto; //foreign key de Proyecto
+    @OneToMany(mappedBy="persona")
+    private List<Proyecto> proyecto;
+    
+    
 
     public Persona() {
     }
@@ -37,12 +57,12 @@ public class Persona {
                    String foto, 
                    String posicion, 
                    String localidad, 
-                   String acerca,
-                   Long[] idExperiencia,
-                   Long[] idEducacion,
-                   Long[] idSkill,
-                   Long[] idProyecto){
-        
+                   String acerca, 
+                   List<RedSocial> redesSociales, 
+                   List<Experiencia> experiencia, 
+                   List<Educacion> educacion, 
+                   List<Skill> skill, 
+                   List<Proyecto> proyecto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -51,12 +71,12 @@ public class Persona {
         this.posicion = posicion;
         this.localidad = localidad;
         this.acerca = acerca;
-        this.idExperiencia = idExperiencia;
-        this.idEducacion = idEducacion;
-        this.idSkill = idSkill;
-        this.idProyecto = idProyecto;
+        this.redesSociales = redesSociales;
+        this.experiencia = experiencia;
+        this.educacion = educacion;
+        this.skill = skill;
+        this.proyecto = proyecto;
     }
-    
-    
+
     
 }

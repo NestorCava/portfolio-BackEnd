@@ -9,4 +9,5 @@ public interface ITipoRedSocialService {
     public void crearTipoRedSocial(TipoRedSocial tipoRedSocial);
     public void eliminarTipoRedSocialById(Long id);
     public TipoRedSocial buscarTipoRedSocialById(Long id);
+    public TipoRedSocial buscarTipoRedSocialByTipo(String tipo);
 }

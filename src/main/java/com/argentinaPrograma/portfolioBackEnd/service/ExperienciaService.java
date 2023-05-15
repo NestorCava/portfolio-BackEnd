@@ -4,6 +4,7 @@ package com.argentinaPrograma.portfolioBackEnd.service;
 import com.argentinaPrograma.portfolioBackEnd.model.Experiencia;
 import com.argentinaPrograma.portfolioBackEnd.repository.ExperienciaRepository;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,11 @@ public class ExperienciaService implements IExperienciaService{
     @Override
     public Experiencia buscarExperienciaById(Long id) {
         return experienciaRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Experiencia> buscarExperienciaByIdPersona(Long id) {
+        return experienciaRepository.findByPersonaId(id);
     }
     
 }

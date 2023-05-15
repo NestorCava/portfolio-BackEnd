@@ -31,5 +31,22 @@ public class TipoRedSocialService implements ITipoRedSocialService{
     public TipoRedSocial buscarTipoRedSocialById(Long id) {
         return tipoRedSocialRepository.findById(id).orElse(null);
      }
+
+    @Override
+    public TipoRedSocial buscarTipoRedSocialByTipo(String tipo) {
+        List<TipoRedSocial> tiposRedesSocial = tipoRedSocialRepository.findAll();
+        TipoRedSocial tipoRedSocial = new TipoRedSocial();
+        
+        for(TipoRedSocial tRS : tiposRedesSocial){
+            if (tRS.getRedSocial().toUpperCase()
+                                 .equals(tipo.toUpperCase())){
+            
+                tipoRedSocial = tRS;
+                break;
+            }else tipoRedSocial=null;
+        }
+        
+        return tipoRedSocial;
+    }
     
 }

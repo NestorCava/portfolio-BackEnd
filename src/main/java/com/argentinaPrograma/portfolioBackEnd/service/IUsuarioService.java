@@ -9,4 +9,5 @@ public interface IUsuarioService {
     public void crearUsuario(Usuario usuario);
     public void eliminarUsuarioById(Long id);
     public Usuario buscarUsuarioById(Long id);
+    public Usuario buscarUsuarioByIdPersona(Long id);
 }

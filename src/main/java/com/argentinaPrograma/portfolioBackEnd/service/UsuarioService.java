@@ -3,6 +3,7 @@ package com.argentinaPrograma.portfolioBackEnd.service;
 import com.argentinaPrograma.portfolioBackEnd.model.Usuario;
 import com.argentinaPrograma.portfolioBackEnd.repository.UsuarioRepository;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,11 @@ public class UsuarioService implements IUsuarioService{
     @Override
     public Usuario buscarUsuarioById(Long id) {
         return usuarioRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Usuario buscarUsuarioByIdPersona(Long id) {
+        return usuarioRepository.findByPersonaId(id);
     }
     
 }

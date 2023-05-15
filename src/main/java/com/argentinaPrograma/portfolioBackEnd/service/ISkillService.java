@@ -8,4 +8,5 @@ public interface ISkillService {
     public void crearSkill(Skill skill);
     public void eliminarSkillById(Long id);
     public Skill buscarSkillById(Long id);
+    public List<Skill> buscarSkillByIdPersona(Long id);
 }
