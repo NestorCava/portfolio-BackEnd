@@ -37,5 +37,20 @@ public class UsuarioService implements IUsuarioService{
     public Usuario buscarUsuarioByIdPersona(Long id) {
         return usuarioRepository.findByPersonaId(id);
     }
+
+    @Override
+    public boolean iniciarSesion(String usuario, String password) {
+        boolean validar = false;
+        List<Usuario> listaUsuarios = usuarioRepository.findByUsuario(usuario);
+        if (listaUsuarios != null){
+            for(Usuario u : listaUsuarios){
+                if (u.getPassword()== password){
+                    validar = true;
+                    break;
+                }
+            }
+        }
+        return validar;
+    }
     
 }
