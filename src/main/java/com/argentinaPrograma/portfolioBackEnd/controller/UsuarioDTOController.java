@@ -21,6 +21,6 @@ public class UsuarioDTOController {
     @GetMapping ("/login")
     public boolean buscarPersonaDTO(@RequestParam String usuario,
                                     @RequestParam String password){
-        return true;//usuarioService.iniciarSesion(usuario, password);
+        return usuarioService.iniciarSesion(usuario, password);
     }
 }
