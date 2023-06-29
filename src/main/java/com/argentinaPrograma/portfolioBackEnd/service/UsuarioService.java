@@ -39,18 +39,20 @@ public class UsuarioService implements IUsuarioService{
     }
 
     @Override
-    public boolean iniciarSesion(String usuario, String password) {
-        boolean validar = false;
-        List<Usuario> listaUsuarios = usuarioRepository.findByUsuario(usuario);
-        if (listaUsuarios != null){
-            for(Usuario u : listaUsuarios){
-                if (u.getPassword()== password){
-                    validar = true;
-                    break;
-                }
+    public Usuario iniciarSesion(Usuario usuario) {
+        Usuario usuarioValidado = new Usuario();
+        //usuario.setUsuario("admin");
+        List<Usuario> listaUsuarios = usuarioRepository.findByUsuario(usuario.getUsuario());
+          
+        if ((!listaUsuarios.isEmpty()) || listaUsuarios == null){
+                
+            listaUsuarios = usuarioRepository.findByPassword(usuario.getPassword());
+            
+            if (!listaUsuarios.isEmpty()){
+                usuarioValidado = listaUsuarios.get(0);
             }
         }
-        return validar;
+        return usuarioValidado;
     }
     
 }

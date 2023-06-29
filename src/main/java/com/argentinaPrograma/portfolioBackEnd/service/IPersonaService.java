@@ -8,4 +8,5 @@ public interface IPersonaService {
     public void crearPersona(Persona persona);
     public void eliminarPersonaById(Long id);
     public Persona buscarPersonaById(Long id);
+    public void actualizarAcercaDe(Long id, String about);
 }

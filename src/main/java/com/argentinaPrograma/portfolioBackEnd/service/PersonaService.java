@@ -31,4 +31,13 @@ public class PersonaService implements IPersonaService{
     public Persona buscarPersonaById(Long id) {
         return personaRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void actualizarAcercaDe(Long id, String about) {
+        Persona persona = new Persona();
+        persona = this.buscarPersonaById(id);
+        persona.setAcerca(about);
+    }
+    
+    
 }

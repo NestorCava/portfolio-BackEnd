@@ -10,5 +10,5 @@ public interface IUsuarioService {
     public void eliminarUsuarioById(Long id);
     public Usuario buscarUsuarioById(Long id);
     public Usuario buscarUsuarioByIdPersona(Long id);
-    public boolean iniciarSesion(String usuario, String password);
+    public Usuario iniciarSesion(Usuario usuario);
 }

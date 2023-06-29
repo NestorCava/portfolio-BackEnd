@@ -41,7 +41,7 @@ public class PersonaDTOController {
     @Autowired
     private IProyectoService proyectoService;
         
-    @GetMapping ("/ver/personadto/{id}")
+    @GetMapping ("/personadto/ver/{id}")
     @ResponseBody
     public PersonaDTO buscarPersonaDTO(@PathVariable Long id){
         PersonaDTO personaDTO;
@@ -84,4 +84,12 @@ public class PersonaDTOController {
         
         return personaDTO;
     }
+    
+    @PostMapping ("/actualizar/about")
+    public void actualizarAbout(@RequestBody Long id,
+                                @RequestBody String about){
+        personaService.actualizarAcercaDe(id,about);
+        System.out.println("Persona guardada???");
+    }
+    
 }
